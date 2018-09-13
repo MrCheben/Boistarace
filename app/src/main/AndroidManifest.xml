@@ -22,8 +22,11 @@
         <activity
             android:name=".jeu"
             android:windowSoftInputMode="stateHidden"
-            android:screenOrientation="sensorLandscape">
-        </activity>
+            android:screenOrientation="sensorLandscape"/>
+        <activity
+            android:name=".dice"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="sensorLandscape"/>
 
     </application>
 
