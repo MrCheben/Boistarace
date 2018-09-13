@@ -64,7 +64,6 @@ public class choixJoueurs extends AppCompatActivity {
                 startActivity(intent);
             }
         });*/
-
     }
 
     public void Go (View v) {
