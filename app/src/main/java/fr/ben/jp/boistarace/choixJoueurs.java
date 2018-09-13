@@ -1,5 +1,6 @@
 package fr.ben.jp.boistarace;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,11 +18,9 @@ public class choixJoueurs extends AppCompatActivity {
         setContentView(R.layout.activity_choix_joueurs);
 
         Button ajoutJoueur = (Button) findViewById(R.id.add_player);
-
         ajoutJoueur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(choixJoueurs.this, "Ajout d'un champ joueur", Toast.LENGTH_SHORT).show();
                 EditText nouveau_joueur = null;
                 if (compteur == 0) {
                     nouveau_joueur = (EditText) findViewById(R.id.joueur4);
@@ -53,5 +52,16 @@ public class choixJoueurs extends AppCompatActivity {
                 }
             }
         });
+        
+        Button lancer_partie = (Button) findViewById(R.id.btnPlay);
+        lancer_partie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(choixJoueurs.this, "Il reste le plus long à coder :)", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), jeu.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
