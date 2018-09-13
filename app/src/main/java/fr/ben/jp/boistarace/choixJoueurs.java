@@ -52,8 +52,10 @@ public class choixJoueurs extends AppCompatActivity {
                 }
             }
         });
+
+
         
-        Button lancer_partie = (Button) findViewById(R.id.btnPlay);
+        /*Button lancer_partie = (Button) findViewById(R.id.btnPlay);
         lancer_partie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +63,13 @@ public class choixJoueurs extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), jeu.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
     }
+
+    public void Go (View v) {
+        Intent intent=new Intent(choixJoueurs.this, jeu.class);
+        startActivity(intent);
+    }
+
 }
