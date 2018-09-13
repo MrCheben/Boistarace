@@ -11,7 +11,8 @@
         android:theme="@style/fullScreen">
         <activity
             android:name=".choixJoueurs"
-            android:screenOrientation="sensorLandscape">
+            android:screenOrientation="sensorLandscape"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

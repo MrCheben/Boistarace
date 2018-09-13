@@ -42,6 +42,7 @@
 
 
         <ScrollView
+            android:id="@+id/list_player"
             android:layout_width="229dp"
             android:layout_height="216dp"
             android:layout_alignParentBottom="true"
@@ -57,7 +58,6 @@
                     android:id="@+id/joueur1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
                     android:layout_marginTop="5dp"
                     android:ems="10"
                     android:hint="Prénom" />
@@ -66,7 +66,6 @@
                     android:id="@+id/joueur2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
                     android:layout_marginTop="5dp"
                     android:ems="10"
                     android:hint="Prénom" />
@@ -75,25 +74,81 @@
                     android:id="@+id/joueur3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Prénom" />
+                <EditText
+                    android:id="@+id/joueur4"
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Prénom" />
+                <EditText
+                    android:id="@+id/joueur5"
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Prénom" />
+                <EditText
+                    android:id="@+id/joueur6"
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Prénom" />
+                <EditText
+                    android:id="@+id/joueur7"
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Prénom" />
+                <EditText
+                    android:id="@+id/joueur8"
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Prénom" />
+                <EditText
+                    android:id="@+id/joueur9"
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:hint="Prénom" />
+                <EditText
+                    android:id="@+id/joueur10"
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:ems="10"
                     android:hint="Prénom" />
 
-                <Button
-                    android:id="@+id/button"
-                    android:layout_width="46dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:text="+" />
 
             </LinearLayout>
         </ScrollView>
 
-
+        <Button
+            android:id="@+id/add_player"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="right"
+            android:layout_marginBottom="86dp"
+            android:layout_toRightOf="@id/list_player"
+            android:text="+"
+            android:textSize="25dp" />
 
     </RelativeLayout>
-
-
 
 </android.support.constraint.ConstraintLayout>
