@@ -15,7 +15,7 @@ public class BaseSQLite extends SQLiteOpenHelper{
         db.execSQL("CREATE TABLE joueur (" +
                 "ID INTEGER NOT NULL," +
                 "Prenom varchar(50) NOT NULL," +
-                "num_case INTEGER," +
+                "num_case INTEGER NOT NULL," +
                 "Couleur varchar(20) NOT NULL," +
                 "CONSTRAINT pk_joueur PRIMARY KEY (ID)" +
                 ");");

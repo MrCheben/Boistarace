@@ -11,11 +11,14 @@ import android.widget.Toast;
 
 public class choixJoueurs extends AppCompatActivity {
 
+    private JeuDAO maBDD = null;
     int compteur = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choix_joueurs);
+
+        maBDD = new JeuDAO(this);
 
         Button ajoutJoueur = (Button) findViewById(R.id.add_player);
         ajoutJoueur.setOnClickListener(new View.OnClickListener() {
@@ -53,21 +56,11 @@ public class choixJoueurs extends AppCompatActivity {
             }
         });
 
-
-        
-        /*Button lancer_partie = (Button) findViewById(R.id.btnPlay);
-        lancer_partie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(choixJoueurs.this, "Il reste le plus long à coder :)", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), jeu.class);
-                startActivity(intent);
-            }
-        });*/
-
     }
 
     public void Go (View v) {
+        maBDD.open();
+
         Intent intent=new Intent(choixJoueurs.this, jeu.class);
         startActivity(intent);
     }
