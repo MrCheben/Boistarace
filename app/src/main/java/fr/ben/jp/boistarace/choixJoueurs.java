@@ -3,10 +3,14 @@ package fr.ben.jp.boistarace;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.Console;
 
 
 public class choixJoueurs extends AppCompatActivity {
@@ -61,8 +65,50 @@ public class choixJoueurs extends AppCompatActivity {
     public void Go (View v) {
         maBDD.open();
 
+        EditText j1 = (EditText)findViewById(R.id.joueur1);
+        EditText j2 = (EditText)findViewById(R.id.joueur2);
+        EditText j3 = (EditText)findViewById(R.id.joueur3);
+        EditText j4 = (EditText)findViewById(R.id.joueur4);
+        EditText j5 = (EditText)findViewById(R.id.joueur5);
+        EditText j6 = (EditText)findViewById(R.id.joueur6);
+        EditText j7 = (EditText)findViewById(R.id.joueur7);
+        EditText j8 = (EditText)findViewById(R.id.joueur8);
+        EditText j9 = (EditText)findViewById(R.id.joueur9);
+        EditText j10 = (EditText)findViewById(R.id.joueur10);
+
+        if (j1.getText().toString() != ""){
+            maBDD.insertJoueur(1, j1.getText().toString(), 0, "Rouge");
+        }
+        if (j2.getText().toString() != ""){
+            maBDD.insertJoueur(2, j2.getText().toString(), 0, "Bleu");
+        }
+        if (j3.getText().toString() != ""){
+            maBDD.insertJoueur(3, j3.getText().toString(), 0, "Jaune");
+        }
+        if (j4.getText().toString() != ""){
+            maBDD.insertJoueur(4, j4.getText().toString(), 0, "Vert");
+        }
+        if (j5.getText().toString() != ""){
+            maBDD.insertJoueur(5, j5.getText().toString(), 0, "Rose");
+        }
+        if (j6.getText().toString() != ""){
+            maBDD.insertJoueur(6, j6.getText().toString(), 0, "Violet");
+        }
+        if (j7.getText().toString() != ""){
+            maBDD.insertJoueur(7, j7.getText().toString(), 0, "Orange");
+        }
+        if (j8.getText().toString() != ""){
+            maBDD.insertJoueur(8, j8.getText().toString(), 0, "Noir");
+        }
+        if (j9.getText().toString() != ""){
+            maBDD.insertJoueur(9, j9.getText().toString(), 0, "Blanc");
+        }
+        if (j10.getText().toString() != ""){
+            maBDD.insertJoueur(10, j10.getText().toString(), 0, "Gris");
+        }
+        maBDD.insertJoueur(666, "PAUL", 0, "Cyan");
+        maBDD.close();
         Intent intent=new Intent(choixJoueurs.this, jeu.class);
         startActivity(intent);
     }
-
 }
