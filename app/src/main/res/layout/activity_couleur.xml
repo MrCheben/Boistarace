@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6e3332"
+    android:background="#944948"
     tools:context=".couleur">
     <LinearLayout
         android:layout_width="match_parent"
