@@ -27,6 +27,10 @@
             android:name=".dice"
             android:windowSoftInputMode="stateHidden"
             android:screenOrientation="sensorLandscape"/>
+        <activity
+            android:name=".couleur"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="sensorLandscape"/>
 
     </application>
 
