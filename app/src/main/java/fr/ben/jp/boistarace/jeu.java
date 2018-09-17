@@ -28,4 +28,5 @@ public class jeu extends AppCompatActivity {
         Intent intent = new Intent(jeu.this, couleur.class);
         startActivity(intent);
     }
+
 }
