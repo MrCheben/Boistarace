@@ -4,6 +4,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class JeuDAO {
 
@@ -11,11 +17,10 @@ public class JeuDAO {
     private BaseSQLite maBaseSQLite;
 
     public JeuDAO(Context context){
-        maBaseSQLite = new BaseSQLite(context, "boistarace.db", null, 1);
+        maBaseSQLite = new BaseSQLite(context, "boistarace.db", null, 3);
     }
 
     public void open(){
-        //ouverture de la base de données en écriture
         maBase = maBaseSQLite.getWritableDatabase();
     }
 
@@ -23,13 +28,18 @@ public class JeuDAO {
         maBase.close();
     }
 
-    public void insertJoueur(Integer ID, String Prenom, Integer num_case, String Couleur){
+    public void insertJoueur(int id, String name, int num_case, String couleur){
         ContentValues v = new ContentValues();
-        v.put("ID", ID);
-        v.put("Prenom", Prenom);
+        v.put("id", id);
+        v.put("name", name);
         v.put("num_case", num_case);
-        v.put("Couleur", Couleur);
+        v.put("couleur", couleur);
         maBase.insert("joueur", null, v);
+        Log.i("DATABASE", "insertJoueur invoked");
+    }
+
+    public void supprimerJoueur(){
+        maBase.execSQL("DELETE FROM joueur");
     }
 
     public String selectEnonce(String typeCase){

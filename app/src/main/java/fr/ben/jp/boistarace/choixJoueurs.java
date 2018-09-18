@@ -1,6 +1,7 @@
 package fr.ben.jp.boistarace;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,14 +16,18 @@ import java.io.Console;
 
 public class choixJoueurs extends AppCompatActivity {
 
-    private JeuDAO maBDD = null;
+    private JeuDAO maBDD;
     int compteur = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choix_joueurs);
 
         maBDD = new JeuDAO(this);
+        maBDD.open();
+        maBDD.supprimerJoueur();
+
 
         Button ajoutJoueur = (Button) findViewById(R.id.add_player);
         ajoutJoueur.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +68,8 @@ public class choixJoueurs extends AppCompatActivity {
     }
 
     public void Go (View v) {
+
+        maBDD = new JeuDAO(this);
         maBDD.open();
 
         EditText j1 = (EditText)findViewById(R.id.joueur1);
@@ -106,7 +113,7 @@ public class choixJoueurs extends AppCompatActivity {
         if (j10.getText().toString() != ""){
             maBDD.insertJoueur(10, j10.getText().toString(), 0, "Gris");
         }
-        maBDD.insertJoueur(666, "PAUL", 0, "Cyan");
+
         maBDD.close();
         Intent intent=new Intent(choixJoueurs.this, jeu.class);
         startActivity(intent);
